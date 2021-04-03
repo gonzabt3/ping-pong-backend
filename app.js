@@ -29,7 +29,7 @@ io.on("connection", (socket) => {
   //   y: 400
   // }
   // socket.emit("FromAPI", ball)
-   startFlow(socket)
+  //  startFlow(socket)
   // if (interval) {
   //   clearInterval(interval);
   // }
@@ -38,7 +38,12 @@ io.on("connection", (socket) => {
   //   console.log("Client disconnected");
   //   clearInterval(interval);
   // });
+
+  socket.on("playerPosition", (position) => {
+    console.log(position);
+  });
 });
+
 
 const move = (ball) => {
   const xOrientation = ball.xOrientation;
